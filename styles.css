@@ -93,13 +93,13 @@ h1 {
 }
 
 main {
-  position: relative;
-  z-index: 1;
   margin-top: clamp(140px, 25%, 160px);
   margin-inline: var(--horizontalSpace);
 }
 
 .card {
+  position: relative;
+  z-index: 1;
   background-color: var(--white);
   max-width: 600px;
   margin-inline: auto;

@@ -30,6 +30,7 @@ Users should be able to:
 
 ### Links
 
+- Frontend Mentor: [Solution](https://www.frontendmentor.io/solutions/faq-accordion-with-semantic-html-and-waapi-animations-tED9XxGzIj)
 - Solution URL: [Github](https://github.com/Donahuec/frontend-mentor-faq-accordion)
 - Live Site URL: [Github Pages](https://donahuec.github.io/frontend-mentor-faq-accordion/)
 
