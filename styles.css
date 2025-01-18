@@ -15,14 +15,18 @@
   --fontSemiBold: 600;
   --fontBold: 700;
 
+  --fontBody: 1rem;
   --fontDisplay: 3.5rem;
   --fontTitle: 1.125rem;
 
   --fontBodyLineHeight: 1.5;
 
-  --fontBody: 1rem;
   --fontWeight: var(--fontRegular);
   --fontFamily: "Work Sans", sans-serif;
+
+  --horizontalSpace: 24px;
+  --verticalSpace: 20px;
+  --cardPadding: 40px;
 }
 
 * {
@@ -37,23 +41,24 @@ html {
 }
 
 body {
+  color: var(--grayPurple);
   font-family: var(--fontFamily);
   font-size: var(--fontBody);
   font-weight: var(--fontWeight);
   font-optical-sizing: auto;
   letter-spacing: 0px;
   line-height: var(--fontBodyLineHeight);
-  color: var(--grayPurple);
   background-color: var(--lightPurple);
 }
 
-.sr-only {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+.attribution {
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--darkPurple);
+  padding: 8px;
+}
+.attribution a {
+  color: var(--purple);
 }
 
 img {
@@ -73,17 +78,8 @@ img.bg.desktop {
   width: clamp(1440px, 100%, 100%);
 }
 
-.bg.mobile {
+img.bg.mobile {
   display: none;
-}
-
-@media only screen and (max-width: 375px) {
-  .bg.mobile {
-    display: block;
-  }
-  .bg.desktop {
-    display: none;
-  }
 }
 
 h1,
@@ -96,28 +92,35 @@ h1 {
   font-weight: var(--fontBold);
 }
 
-.head {
-  display: flex;
-  gap: 24px;
-}
-
 main {
   position: relative;
   z-index: 1;
   margin-top: clamp(140px, 25%, 160px);
-  margin-inline: 24px;
+  margin-inline: var(--horizontalSpace);
 }
 
 .card {
   background-color: var(--white);
   max-width: 600px;
   margin-inline: auto;
-  padding: 40px;
+  padding: var(--cardPadding);
   border-radius: 16px;
+  box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.1);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--horizontalSpace);
+}
+
+.head-star {
+  height: var(--fontDisplay);
+  width: var(--fontDisplay);
 }
 
 .details-container {
-  padding-block: 20px;
+  padding-block: var(--verticalSpace);
   &:not(:last-child) {
     border-bottom: 1px solid var(--lightPurple);
   }
@@ -129,20 +132,20 @@ main {
   }
 }
 
-/* details {
-  padding: 5px;
-} */
-
 .title {
-  display: flex;
+  /* small amount of padding for the focus outline to not be hidden by animation */
   padding: 4px;
+  list-style: none;
+
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: var(--horizontalSpace);
+
   font-size: var(--fontTitle);
   font-weight: var(--fontSemiBold);
   line-height: 1.875;
-  list-style: none;
+
   &:hover,
   &:focus-visible {
     color: var(--purple);
@@ -152,16 +155,34 @@ main {
     outline-offset: -2px;
   }
   .indicator {
+    /* it is fine for us to control the indicator in css */
+    /* it is decorative, and the semantic html provides the required context */
     content: url(./assets/images/icon-plus.svg);
   }
 }
 
 .detail-content p {
-  padding-top: 24px;
+  padding-top: var(--horizontalSpace);
 }
 
 details[open] {
   .title .indicator {
     content: url(./assets/images/icon-minus.svg);
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  img.bg.mobile {
+    display: block;
+  }
+  img.bg.desktop {
+    display: none;
+  }
+
+  :root {
+    --fontBody: 0.875rem;
+    --fontDisplay: 2rem;
+    --fontTitle: 1rem;
+    --cardPadding: var(--horizontalSpace);
   }
 }
