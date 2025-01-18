@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Work Sans";
   src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -34,7 +33,7 @@
 
 body,
 html {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -44,7 +43,8 @@ body {
   font-optical-sizing: auto;
   letter-spacing: 0px;
   line-height: var(--fontBodyLineHeight);
-  background-color: var(--lightPink);
+  color: var(--grayPurple);
+  background-color: var(--lightPurple);
 }
 
 .sr-only {
@@ -54,4 +54,114 @@ body {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+img {
+  display: block;
+}
+
+.bg-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.bg.desktop {
+  width: clamp(1440px, 100%, 100%);
+}
+
+.bg.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 375px) {
+  .bg.mobile {
+    display: block;
+  }
+  .bg.desktop {
+    display: none;
+  }
+}
+
+h1,
+.title {
+  color: var(--darkPurple);
+}
+
+h1 {
+  font-size: var(--fontDisplay);
+  font-weight: var(--fontBold);
+}
+
+.head {
+  display: flex;
+  gap: 24px;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(140px, 25%, 160px);
+  margin-inline: 24px;
+}
+
+.card {
+  background-color: var(--white);
+  max-width: 600px;
+  margin-inline: auto;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.details-container {
+  padding-block: 20px;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--lightPurple);
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+/* details {
+  padding: 5px;
+} */
+
+.title {
+  display: flex;
+  padding: 4px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  font-size: var(--fontTitle);
+  font-weight: var(--fontSemiBold);
+  line-height: 1.875;
+  list-style: none;
+  &:hover,
+  &:focus-visible {
+    color: var(--purple);
+    cursor: pointer;
+    outline-color: var(--purple);
+    /* avoid getting cutoff by animation */
+    outline-offset: -2px;
+  }
+  .indicator {
+    content: url(./assets/images/icon-plus.svg);
+  }
+}
+
+.detail-content p {
+  padding-top: 24px;
+}
+
+details[open] {
+  .title .indicator {
+    content: url(./assets/images/icon-minus.svg);
+  }
 }
