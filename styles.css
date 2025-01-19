@@ -24,8 +24,8 @@
   --fontWeight: var(--fontRegular);
   --fontFamily: "Work Sans", sans-serif;
 
-  --horizontalSpace: 24px;
-  --verticalSpace: 20px;
+  --spaceLarger: 24px;
+  --spaceSmaller: 20px;
   --cardPadding: 40px;
 }
 
@@ -94,7 +94,7 @@ h1 {
 
 main {
   margin-top: clamp(140px, 25%, 160px);
-  margin-inline: var(--horizontalSpace);
+  margin-inline: var(--spaceLarger);
 }
 
 .card {
@@ -111,7 +111,7 @@ main {
 .head {
   display: flex;
   align-items: center;
-  gap: var(--horizontalSpace);
+  gap: var(--spaceLarger);
 }
 
 .head-star {
@@ -120,7 +120,7 @@ main {
 }
 
 .details-container {
-  padding-block: var(--verticalSpace);
+  padding-block: var(--spaceSmaller);
   &:not(:last-child) {
     border-bottom: 1px solid var(--lightPurple);
   }
@@ -140,7 +140,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--horizontalSpace);
+  gap: var(--spaceSmaller);
 
   font-size: var(--fontTitle);
   font-weight: var(--fontSemiBold);
@@ -162,7 +162,7 @@ main {
 }
 
 .detail-content p {
-  padding-top: var(--verticalSpace);
+  padding-top: var(--spaceSmaller);
 }
 
 details[open] {
@@ -188,6 +188,6 @@ details[open] {
     --fontBody: 0.875rem;
     --fontDisplay: 2rem;
     --fontTitle: 1rem;
-    --cardPadding: var(--horizontalSpace);
+    --cardPadding: var(--spaceLarger);
   }
 }
