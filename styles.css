@@ -115,8 +115,8 @@ main {
 }
 
 .head-star {
-  height: var(--fontDisplay);
-  width: var(--fontDisplay);
+  height: 40px;
+  width: 40px;
 }
 
 .details-container {
@@ -162,7 +162,7 @@ main {
 }
 
 .detail-content p {
-  padding-top: var(--horizontalSpace);
+  padding-top: var(--verticalSpace);
 }
 
 details[open] {
@@ -177,6 +177,11 @@ details[open] {
   }
   img.bg.desktop {
     display: none;
+  }
+
+  .head-star {
+    height: 24px;
+    width: 24px;
   }
 
   :root {
